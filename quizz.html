@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" />
+    <script src="https://cdn.rawgit.com/nnattawat/flip/master/dist/jquery.flip.min.js"></script>
+    <style>
+        body {
+            padding: 15px;
+        }
+
+        .btn-big {
+            height: 150px;
+            width: 70%;
+            font-size: 50px;
+        }
+
+        #question {
+            font-size: 100px;
+        }
+
+        #reponse {
+            color: forestgreen;
+            font-size: 75px;
+        }
+
+        .jumbotron {
+            height: 70vh;
+        }
+    </style>
+</head>
+<body>
+    <div id="congratulation" style="display: none">
+        <div class="row">
+            <div class="col-lg-12">
+                <h2><span>EQUIPE </span><span id="teamname"></span><span>VAINQUEUR</span></h2>
+            </div>
+        </div>
+        <div class="col-lg-12">
+            <img style="width: 70vw" src="http://68.media.tumblr.com/tumblr_lpl5x40k2i1qanxyso1_500.gif" />
+        </div>
+
+    </div>
+    <div id="quizz">
+        <div class="row">
+            <div class="col-lg-6 text-center" data-team="1" data-score="0">
+                <div class="btn btn-big btn-primary team">
+                    EQUIPE 1
+                <div class="score">
+                    0
+                </div>
+                </div>
+                <div class="minus">-</div>
+
+            </div>
+            <div class="col-lg-6" data-team="2" data-score="0">
+                <div class="btn  btn-big btn-warning team">
+                    EQUIPE 2
+                  <div class="score">
+                      0
+                  </div>
+                </div>
+                <div class="minus">-</div>
+            </div>
+            <div class="col-lg-12">
+                <!-- Question-->
+                <div class="jumbotron">
+                    <h1 id="question">IDIGAO BIG QUIZZ</h1>
+                    <h2 id="reponse">TEAM 1 VS TEAM2</h2>
+
+                </div>
+
+
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-lg-12 ">
+                <div class="btn btn-default btn-ouline pull-left" id="seeanswer">Voir la reponse</div>
+                <div class="btn btn-default btn-outline pull-right" id="nextquestion">
+                    question suivante
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    function shuffle(array) {
+        var currentIndex = array.length, temporaryValue, randomIndex;
+
+        // While there remain elements to shuffle...
+        while (0 !== currentIndex) {
+
+            // Pick a remaining element...
+            randomIndex = Math.floor(Math.random() * currentIndex);
+            currentIndex -= 1;
+
+            // And swap it with the current element.
+            temporaryValue = array[currentIndex];
+            array[currentIndex] = array[randomIndex];
+            array[randomIndex] = temporaryValue;
+        }
+
+        return array;
+    }
+
+
+    var questionListTec = [
+      {
+          question: 'En JavaScript, quel est le résultat de parseInt("010",8) ?',
+          answer: "8"
+      },
+      {
+          question: "Quelle est la méthode spécifiée dans le DOM-2 pour l'ajout des gestionnaires d'événements ?",
+          answer: "addEventListener "
+      },
+      {
+          question: "En JavaScript, quel est le résultat de 'undefined==null'",
+          answer: "true"
+      },
+      {
+          question: "Quelle est la signification du sigle SQL ?",
+          answer: "simple query language"
+      },
+
+      {
+          question: "Qui a inventé le modèle relationnel des données ?",
+          answer: "E.Codd :  il invente le modèle lors de travaux de recherche pour IBM"
+      },
+      {
+          question: "Comment s’appelle l'opération de liaison de données permettent d'interroger plusieurs tables à la fois ?",
+          answer: "Jointure"
+      },
+      {
+          question: "Quelles clauses placées après le type de donnée d'un champ permettent de vérifier que le contenu de ce champ est unique ?",
+          answer: "PRIMARY KEY / UNIQUE"
+      },
+      {
+          question: "Le mot clef int correspond à quel type .NET ?",
+          answer: "System.Int32"
+      },
+      {
+          question: "Comment déclare-t-on correctement un tableau à deux dimensions en C# ?",
+          answer: "int[,] myArray"
+      },
+      {
+          question: "Si une méthode est marquée comme protected internal, qui peut y accéder ? ",
+          answer: "Seules les méthodes qui sont dans la même classe que la méthode en question"
+      },
+      {
+          question: "Quel paramètre du compilateur permet de créer un fichier xml à partir des commentaires xml des fichiers d'un assembly ?  ",
+          answer: "/text"
+      },
+      {
+          question: "Qu'est-ce que le boxing ? ",
+          answer: "Encapsuler un type valeur dans un objet"
+      },
+
+    ];
+
+    var questionListPleasure = [
+      {
+          question: "Qui a eu l’Oscar du meilleur acteur en 2016 ?",
+          answer: "Leonardo DiCaprio pour le rôle de Hugh Glass dans The Revenant"
+      },
+      {
+          question: "Que signifient les initiales 'CSA' ? ",
+          answer: "Conseil Supérieur de l’Audiovisuel"
+      },
+      {
+
+          question: "Comment s'appelle le dernier lauréat français de la médaille field ?",
+          answer: "Artur Avila (2014), franco-brésilien"
+      },
+      {
+          question: "Qui présente l’émission 'Salut les Terriens !' sur Canal + ? ",
+          answer: "Thierry Ardisson"
+      },
+      {
+          question: "Qui a remporté le championnat d’Europe de football pendant l’été 2016 ? ",
+          answer: "Le Portugal"
+      },
+      {
+          question: "Quel célèbre joueur du PSG a quitté le club cette année pour rejoindre le club de Manchester United ?",
+          answer: "Zlatan Ibrahimovic"
+      },
+                 {
+
+                     question: "Comment s'appelle le plus long fleuve du monde ?",
+                     answer: "L'Amazone"
+                 },
+      {
+          question: "Qui a gagné la finale homme de Rolland Garros en 2016 ? ",
+          answer: "Novac Djoko"
+      },
+
+      {
+          question: "Poursuivez la suite : 0, 4, 18, 48, 100",
+          answer: "Le nombre après 100 est 180. Soit n, le rang du nombre, alors son résultat sera : n*(n+1)^2. Le premier rang étant le rang 0. On trouve 5*(5+1)^2 = 5*6*6 = 180"
+      },
+      {
+          question: "Quelle chanteuse a remporté le César du meilleur espoir féminin en 2015  ?",
+          answer: "Louane Emera"
+      },
+      {
+          question: "Qui a chanté ? 'T'aimer sur les bords du lac, ton coeur sur mon corps qui respire, pourvu que les hommes nous regardent, amoureux de l'ombre et du pire'",
+          answer: "Julien Doré"
+      },
+      {
+
+          question: " Qui a gagné le prix Goncourt 2016 ?",
+          answer: "Catherine Cusset "
+      },
+        {
+
+            question: "En quelle année a été crée Idigao ?",
+            answer: "04 novembre 2005 "
+        },
+        {
+
+            question: "Comment s'appelle le pdg de Microsoft ?",
+            answer: "Satya Nadella "
+        },
+           {
+
+               question: "Comment s'appelle le pdg de Blackberry ?",
+               answer: "John S. Chen "
+           },
+               {
+
+                   question: "Comment s'appelle le candidat représentant les Verts à l'élection présidentiel ?",
+                   answer: "Yannick Jadot"
+               },
+
+
+
+
+    ];
+    function Check(score, team) {
+        if (score > 14) {
+            $("#congratulation #teamname").text(team);
+            $("#congratulation").hide();
+            $("#congratulation").show("slow");
+            $("#quizz").hide("slow");
+        }
+    }
+
+    $(document).ready(function () {
+        $(".team").on("click", function () {
+            var score = $(this).closest(".col-lg-6").data("score");
+            $(this).closest(".col-lg-6").data("score", score + 1);
+            $(this).closest(".col-lg-6").find(".score").text(score + 1);
+
+            Check($(this).closest(".col-lg-6").data("score"), $(this).closest(".col-lg-6").data("team"))
+
+        })
+        $(".minus").on("click", function () {
+            var score = $(this).closest(".col-lg-6").data("score");
+            $(this).closest(".col-lg-6").data("score", score - 1);
+            $(this).closest(".col-lg-6").find(".score").text(score - 1);
+
+
+        })
+
+        var qnum = 0;
+        var questionListTecnum = 0;
+        var questionListPleasurenum = 0;
+        console.log("questionListTecnum", questionListTec.length)
+        console.log("questionListPleasurenum", questionListPleasure.length)
+
+        $("#nextquestion").on("click", function () {
+            if (qnum % 2 && questionListTec.length > questionListTecnum) {
+                $("#question").text(questionListTec[questionListTecnum].question);
+                $("#reponse").text(questionListTec[questionListTecnum].answer);
+                questionListTecnum++;
+            }
+            else {
+                $("#question").text(questionListPleasure[questionListPleasurenum].question);
+                $("#reponse").text(questionListPleasure[questionListPleasurenum].answer);
+                questionListPleasurenum++;
+            }
+
+            //$("#reponse").hide();
+            qnum++;
+
+        })
+
+        $("#seeanswer").on("click", function () {
+            $("#reponse").show("slow");
+        })
+    })
+</script>
