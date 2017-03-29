@@ -109,174 +109,174 @@
         return array;
     }
 
+var questionListTec = [
+    {
+        question: 'Que retourne l’expression (Johanna.color == “Red”)?“Pompette”:“Ça va”   ? ',
+        answer: "42"
+    },
+    {
+        question: "Quelle est la différence entre les delegates ACTION et FUNC ?",
+        answer: "Action n’a pas de retour alors que func en a un (comme le Brexit) "
+    },
+    {
+        question: "Que retourne l’expression suivante ? ",
+        answer: "true"
+    },
+    {
+        question: "Comment appelle-t-on le type d'écriture suivant : X => X.LENGTH == 12 ?",
+        answer: " Une expression lambda"
+    },
 
-    var questionListTec = [
-      {
-          question: 'En JavaScript, quel est le résultat de parseInt("010",8) ?',
-          answer: "8"
-      },
-      {
-          question: "Quelle est la méthode spécifiée dans le DOM-2 pour l'ajout des gestionnaires d'événements ?",
-          answer: "addEventListener "
-      },
-      {
-          question: "En JavaScript, quel est le résultat de 'undefined==null'",
-          answer: "true"
-      },
-      {
-          question: "Quelle est la signification du sigle SQL ?",
-          answer: " Structured Query Language"
-      },
+    {
+        question: "Quel sera le résultat de cette opération : var result = 2/3 ? ",
+        answer: "Résultat de type int et de valeur 0"
+    },
+    {
+        question: "En C#, comment éviter le recours aux séquences d'échappement en affectant une valeur à une variable ? ",
+        answer: " En utilisant un @ comme : string s = @”Pas d’échappement. (ou en ne faisant pas de C#)"
+    },
+    {
+        question: "Quel est l’équivalent SQL Server de l’opérateur C# “??” ?",
+        answer: "la fonction ISNULL()"
+    },
+    {
+        question: "En css, que faire pour que mon texte soit en majuscule, que dois-écrire: text-transform:... ",
+        answer: "uppercase"
+    },
+ {
+        question: "En css, que fare pour que mon seul la première lettre de chaque mon de mon texte soit en majuscule, que dois-écrire: text-transform:... ",
+        answer: "capitalize"
+    },
+    {
+        question: "En ECMAScript 5, existe-t'il des Getters et des Setters pour JS ? ",
+        answer: "Seules les méthodes qui sont dans la même classe que la méthode en question"
+    },
+    {
+        question: " En quel language dois-je programmer pour faire une application dites native sur Android ? ",
+        answer: "JAVA "
+    },
+    {
+        question: "var arr2=arr1; var arr1=[0,1,2];  arr1[0]=5; Quelle est la valeur de arr2[0] ? ",
+        answer: "5"
+    },
 
-      {
-          question: "Qui a inventé le modèle relationnel des données ?",
-          answer: "E.Codd :  il invente le modèle lors de travaux de recherche pour IBM"
-      },
-      {
-          question: "Comment s’appelle l'opération de liaison de données permettent d'interroger plusieurs tables à la fois ?",
-          answer: "Jointure"
-      },
-      {
-          question: "Quelles clauses placées après le type de donnée d'un champ permettent de vérifier que le contenu de ce champ est unique ?",
-          answer: "PRIMARY KEY / UNIQUE"
-      },
-      {
-          question: "Le mot clef int correspond à quel type .NET ?",
-          answer: "System.Int32"
-      },
-      {
-          question: "Comment déclare-t-on correctement un tableau à deux dimensions en C# ?",
-          answer: "int[,] myArray"
-      },
-      {
-          question: "Si une méthode est marquée comme protected internal, qui peut y accéder ? ",
-          answer: "Seules les méthodes qui sont dans la même classe que la méthode en question"
-      },
-      {
-          question: "Quel paramètre du compilateur permet de créer un fichier xml à partir des commentaires xml des fichiers d'un assembly ?  ",
-          answer: "/text"
-      },
-      {
-          question: "Qu'est-ce que le boxing ? ",
-          answer: "Encapsuler un type valeur dans un objet"
-      },
+];
 
-    ];
+var questionListPleasure = [
+    {
+        question: "Quel est le composant dans la baguette d’Harry Potter ? ",
+        answer: "Une plume de phenix"
+    },
+    {
+        question: "Dans Doctor Who, comment s’appelle le vaisseau du Docteur ? ",
+        answer: "le Tardis"
+    },
+    {
 
-    var questionListPleasure = [
-      {
-          question: "Qui a eu l’Oscar du meilleur acteur en 2016 ?",
-          answer: "Leonardo DiCaprio pour le rôle de Hugh Glass dans The Revenant"
-      },
-      {
-          question: "Que signifient les initiales 'CSA' ? ",
-          answer: "Conseil Supérieur de l’Audiovisuel"
-      },
-      {
+        question: "Que signifie TARDIS ? ",
+        answer: "VO : Time And Relative Dimension In Space - VF : Temps À Relativité Dimensionnelle Inter Spatiale"
+    },
+    {
+        question: "Qui sont Dick Grayson, Jason Todd et Tim Drake ? ",
+        answer: "Les 3 premiers Robin de Batman"
+    },
+    {
+        question: "Dans le film “Moulin Rouge”, quelle chanson de Police est reprise en version tango ?  ",
+        answer: "Roxanne"
+    },
+    {
+        question: "Quel est le plus long fleuve de France ?",
+        answer: "La Loire (~1012 km)"
+    },
+    {
 
-          question: "Comment s'appelle le dernier lauréat français de la médaille field ?",
-          answer: "Artur Avila (2014), franco-brésilien"
-      },
-      {
-          question: "Qui présente l’émission 'Salut les Terriens !' sur Canal + ? ",
-          answer: "Thierry Ardisson"
-      },
-      {
-          question: "Qui a remporté le championnat d’Europe de football pendant l’été 2016 ? ",
-          answer: "Le Portugal"
-      },
-      {
-          question: "Quel célèbre joueur du PSG a quitté le club cette année pour rejoindre le club de Manchester United ?",
-          answer: "Zlatan Ibrahimovic"
-      },
-                 {
+        question: "Terminez cette réplique \"Il dit qu'il a plus de genoux.\" ",
+        answer: "Il dit qu'il voit pas le rapport"
+    },
+    {
+        question: "Quel acteur joue dans les films Thor, Avengers, et Kong Skull Island ? ",
+        answer: "Tom Hiddleston"
+    },
 
-                     question: "Comment s'appelle le plus long fleuve du monde ?",
-                     answer: "L'Amazone"
-                 },
-      {
-          question: "Qui a gagné la finale homme de Rolland Garros en 2016 ? ",
-          answer: "Novac Djoko"
-      },
+    {
+        question: "Qui sont les acteurs principaux du film “La La Land” ? ",
+        answer: "Ryan Gosling et Emma Stone"
+    },
+    {
+        question: "Qui a remporté le dernier match amical France-Espagne ? ",
+        answer: "Espagne (0-2)"
+    },
+    {
+        question: "Quelle est la capital du Boutan ?",
+        answer: "Thimphou"
+    },
 
-      {
-          question: "Poursuivez la suite : 0, 4, 18, 48, 100",
-          answer: "Le nombre après 100 est 180. Soit n, le rang du nombre, alors son résultat sera : n*(n+1)^2. Le premier rang étant le rang 0. On trouve 5*(5+1)^2 = 5*6*6 = 180"
-      },
-      {
-          question: "Quelle chanteuse a remporté le César du meilleur espoir féminin en 2015  ?",
-          answer: "Louane Emera"
-      },
-      {
-          question: "Qui a chanté ? 'T'aimer sur les bords du lac, ton coeur sur mon corps qui respire, pourvu que les hommes nous regardent, amoureux de l'ombre et du pire'",
-          answer: "Julien Doré"
-      },
-         {
-          question: "Qui a chanté ? 'T'aimer sur les bords du lac, ton coeur sur mon corps qui respire, pourvu que les hommes nous regardent, amoureux de l'ombre et du pire'",
-          answer: "Julien Doré"
-      },
-      {
-          question: " Suite de lettres et de chiffres : 54 48 42 ? …… 30 24",
-          answer: "36"
-      },
-       {
-          question: " Suite de lettres et de chiffres  : A B D G K ? ……  ",
-          answer: "P"
-      },
-       { 
-          question: " Ensemble de 500 feuilles de papier / pagaye …………………………………… ( E A M R )   ",
-          answer: "RAME"
-      },
-      { 
-          question: " Reconstituer le mot manquant  : Support mural sur lequel on écrit / Ce qui s’offre à la vue et provoque une réaction    ( U T A B A E L )   ",
-          answer: "TABLEAU"
-      },
-      { 
-          question: " Reconstituer le mot manquant  : Grade dans l’armée / qui concerne la majorité   ( A É R É L N G )    ",
-          answer: "GENERAL"
-      },
-       { 
-          question: " Reconstituer le mot manquant  :  Ancienne assemblée politique / régime…………………………………… ( D E E I T )    ",
-          answer: "DIETE"
-      },
-      { 
-          question: " Reconstituer le mot manquant  : Domaine agricole / qui offre une certaine résistance à la pression …………………………… ( R M E E F )   ",
-          answer: "FERME"
-      },
-        { 
-          question: " Reconstituer le mot manquant  : Militaire / saucisse sèche et plate …………………………………… ( E R E M N G D A ) ",
-          answer: "GENDARME"
-      },
-      {
+    {
+        question: "Quelle chanson commence par ces mots: 'Je marche vers les ténèbres Vers l'horizon funeste Mais la vie qui m'entoure et me baigne",
+        answer: "Bleu Noir de Mylène Farmer"
+    },
+    {
+        question: " Suite de lettres et de chiffres : 54 48 42 ? …… 30 24",
+        answer: "36"
+    },
+    {
+        question: "Comment appelle t'on un SSII aujourd'hui ? ",
+        answer: "ESN"
+    },
+    {
+        question: " Si je commence une phrase par \"j'éspère que...\" puis je terminer par un point d'interogation ?  ",
+        answer: "Non"
+    },
+    {
+        question: " Comment se prononce le nom de famille de cet IdiCollab : Nicolas Millon  ? ",
+        answer: "Il faut dire les 2 L"
+    },
+    {
+        question: " En quelle année est née MMA ?  ",
+        answer: "GENERAL"
+    },
+    {
+        question: " En France, selon Stackoverflow, quel language permet d'obtenir le meilleur salaire en moyenne ?  ",
+        answer: "Python"
+    },
+    {
+        question: " Reconstituer le mot manquant  : Domaine agricole / qui offre une certaine résistance à la pression …………………………… ( R M E E F )   ",
+        answer: "FERME"
+    },
+    {
+        question: " Reconstituer le mot manquant  : Militaire / saucisse sèche et plate …………………………………… ( E R E M N G D A ) ",
+        answer: "GENDARME"
+    },
+    {
 
-          question: " Qui a gagné le prix Goncourt 2016 ?",
-          answer: "Catherine Cusset "
-      },
-        {
+        question: " Qui a gagné le prix Goncourt 2016 ?",
+        answer: "Catherine Cusset "
+    },
+    {
 
-            question: "En quelle année a été crée Idigao ?",
-            answer: "04 novembre 2005 "
-        },
-        {
+        question: "En quelle année a été crée Idigao ?",
+        answer: "04 novembre 2005 "
+    },
+    {
 
-            question: "Comment s'appelle le pdg de Microsoft ?",
-            answer: "Satya Nadella "
-        },
-           {
+        question: "Comment s'appelle le pdg de Microsoft ?",
+        answer: "Satya Nadella "
+    },
+    {
 
-               question: "Comment s'appelle le pdg de Blackberry ?",
-               answer: "John S. Chen "
-           },
-               {
+        question: "Comment s'appelle le pdg de Blackberry ?",
+        answer: "John S. Chen "
+    },
+    {
 
-                   question: "Comment s'appelle le candidat représentant les Verts à l'élection présidentiel ?",
-                   answer: "Yannick Jadot"
-               },
-
-
+        question: "Comment s'appelle le candidat représentant les Verts à l'élection présidentiel ?",
+        answer: "Yannick Jadot"
+    },
 
 
-    ];
+
+
+];
     function Check(score, team) {
         if (score > 14) {
             $("#congratulation #teamname").text(team);
