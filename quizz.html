@@ -1,40 +1,44 @@
 <!DOCTYPE html>
 
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
 <head>
     <meta charset="utf-8" />
     <title></title>
     <script src="dbquestion.js"></script>
-  
+
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" />
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous" />
     <script src="https://cdn.rawgit.com/nnattawat/flip/master/dist/jquery.flip.min.js"></script>
     <style>
         body {
             padding: 15px;
         }
-
+        
         .btn-big {
             height: 150px;
             width: 70%;
             font-size: 50px;
         }
-
+        
         #question {
             font-size: 80px;
         }
-
+        
         #reponse {
             color: forestgreen;
             font-size: 60px;
         }
-
+        
         .jumbotron {
             height: 60vh;
         }
     </style>
 </head>
+
 <body>
     <div id="congratulation" style="display: none">
         <div class="row">
@@ -52,19 +56,19 @@
             <div class="col-lg-6 text-center" data-team="1" data-score="0">
                 <div class="btn btn-big btn-primary team">
                     EQUIPE 1
-                <div class="score">
-                    0
-                </div>
+                    <div class="score">
+                        0
+                    </div>
                 </div>
                 <div class="minus">-</div>
 
             </div>
-            <div class="col-lg-6" data-team="2" data-score="0">
+            <div class="col-lg-6" data-team="2" data-score="0" id="team1">
                 <div class="btn  btn-big btn-warning team">
                     EQUIPE 2
-                  <div class="score">
-                      0
-                  </div>
+                    <div class="score">
+                        0
+                    </div>
                 </div>
                 <div class="minus">-</div>
             </div>
@@ -90,6 +94,7 @@
         </div>
     </div>
 </body>
+
 </html>
 <script>
     function shuffle(array) {
@@ -121,6 +126,14 @@
     }
 
     $(document).ready(function () {
+        $(document).keypress(32, () => {
+            alert("equipe1")
+        })
+
+        // $(document).keypress(32, () => {
+        //     alert("equipe2")
+        // })
+
         $(".team").on("click", function () {
             var score = $(this).closest(".col-lg-6").data("score");
             $(this).closest(".col-lg-6").data("score", score + 1);
@@ -164,4 +177,5 @@
             $("#reponse").show("slow");
         })
     })
+
 </script>
