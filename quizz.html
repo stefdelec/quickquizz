@@ -75,9 +75,9 @@
             <div class="col-lg-12">
                 <!-- Question-->
                 <div class="jumbotron">
-                    <h1 id="question">IDIGAO BIG QUIZZ</h1>
+                    <h1 id="question">THE BIG QUIZZ</h1>
                     <h2 id="reponse">TEAM 1 VS TEAM2</h2>
-
+                    <h2 id="asweringteam"></h2>
                 </div>
 
 
@@ -97,6 +97,16 @@
 
 </html>
 <script>
+    const audio = {
+        team1: new Audio("./sound/trumpet.wav"),
+        team2: new Audio("./sound/donkey.wav"),
+        succes: new Audio("./sound/success.wav"),
+        suspense: new Audio("./sound/drumroll.wav"),
+        yeah:new Audio("./sound/yeah.wav")
+    }
+
+
+
     function shuffle(array) {
         var currentIndex = array.length, temporaryValue, randomIndex;
 
@@ -126,15 +136,31 @@
     }
 
     $(document).ready(function () {
-        $(document).keypress(32, () => {
-            alert("equipe1")
+        console.log("je suis");
+        $(window).on("keypress", (event) => {
+
+            console.log(event.keyCode)
+            if (event.keyCode == 32) {
+                audio.team1.play();
+                $("#asweringteam").text("equipe1").show();
+
+            } //keycode =>space
+            if (event.keyCode == 122) {
+                audio.team2.play()
+                $("#asweringteam").text("equipe2").show();
+
+            }
+
+
         })
 
-        // $(document).keypress(32, () => {
+        // $(document).keypress(38, () => {
+        //     //audioTeam2.play()
         //     alert("equipe2")
         // })
 
         $(".team").on("click", function () {
+            audio.yeah.play();
             var score = $(this).closest(".col-lg-6").data("score");
             $(this).closest(".col-lg-6").data("score", score + 1);
             $(this).closest(".col-lg-6").find(".score").text(score + 1);
@@ -157,6 +183,8 @@
         console.log("questionListPleasurenum", questionListPleasure.length)
 
         $("#nextquestion").on("click", function () {
+            $("#asweringteam").hide();
+            audio.succes.play();
             if (qnum % 2 && questionListTec.length > questionListTecnum) {
                 $("#question").text(questionListTec[questionListTecnum].question);
                 $("#reponse").text(questionListTec[questionListTecnum].answer);
@@ -174,7 +202,12 @@
         })
 
         $("#seeanswer").on("click", function () {
-            $("#reponse").show("slow");
+            audio.suspense.play();
+            $("#asweringteam").hide();
+            setTimeout(() => {
+                $("#reponse").show("slow");
+            }, 3500)
+
         })
     })
 
